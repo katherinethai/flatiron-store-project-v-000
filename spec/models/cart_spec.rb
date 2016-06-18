@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'pry'
 RSpec.describe Cart, :type => :model do
   before(:each) do 
     @item = Item.first

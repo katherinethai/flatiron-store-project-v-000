@@ -13,7 +13,7 @@ describe 'Feature Test: Category', :type => :feature do
     it "lists all of the items in that category" do
       @items.each do |item|
         expect(page).to have_content item.title
-        expect(page).to have_content "$#{item.price.to_f/100}"
+        expect(page).to have_content "$#{item.price.to_f}0"
       end
     end
 

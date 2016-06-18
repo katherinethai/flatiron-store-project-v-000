@@ -1,8 +1,11 @@
+<% require 'pry' %>
 <nav class="">
     <ul>
         <li> <%= link_to "Store Home", store_path %> </li>
-        <% if !!@cart %>
-          <li> <%= link_to "Cart", cart_path(current_cart) %></li>
+        <% if user_signed_in? && current_user.current_cart_id %>
+          <li> <%= link_to "Cart", cart_path(current_user.current_cart) %></li>
         <% end %>
+        <li> <%= link_to "Categories", categories_path %> </li>
+        <%= render 'layouts/sign_in' %>
     </ul>
 </nav>

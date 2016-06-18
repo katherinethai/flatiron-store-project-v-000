@@ -1,3 +1,4 @@
+require 'pry'
 describe 'Feature Test: Cart', :type => :feature do
 
   describe "Checking out" do
@@ -152,7 +153,7 @@ describe 'Feature Test: Cart', :type => :feature do
         expect(@user.current_cart.line_items.first.quantity).to eq(2)
         expect(page).to have_content("Quantity: 2")
         total = first_item.price * 2
-        expect(page).to have_content("$#{total.to_f/100}")
+        expect(page).to have_content("$#{total.to_f}0")
       end
 
     end
